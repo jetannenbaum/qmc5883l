@@ -13,7 +13,7 @@ declination = [0] * 2
 
 print("Find your Magnetic Declination Here: https://www.magnetic-declination.com/")
 declination[0] = input("Enter Magnetic Declination (Degrees only): ")
-declination[1] = input("Enter Inclination (Degrees only): ")
+declination[1] = input("Enter Magnetic Declination (Minutes only): ")
 
 print("Rotate your sensor around all axis.  Once the numbers stop changing, hit ctrl-c")
 
