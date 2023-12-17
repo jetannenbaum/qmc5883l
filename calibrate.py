@@ -4,6 +4,7 @@ from machine import Pin, I2C
 
 I2C_SDA_PIN = 0
 I2C_SCL_PIN = 1
+I2C_ID = 0
 Xmin=0
 Xmax=-0
 Ymin=0
@@ -17,7 +18,7 @@ declination[1] = input("Enter Magnetic Declination (Minutes only): ")
 
 print("Rotate your sensor around all axis.  Once the numbers stop changing, hit ctrl-c")
 
-i2c=I2C(0,sda=Pin(I2C_SDA_PIN), scl=Pin(I2C_SCL_PIN), freq=400000)
+i2c=I2C(id = I2C_ID, sda=Pin(I2C_SDA_PIN), scl=Pin(I2C_SCL_PIN), freq=400000)
 data = array('B', [0] * 6)
 
 i2c.writeto_mem(0x0D, 0xB, b'\x01')

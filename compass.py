@@ -21,12 +21,14 @@ def heading(x, y):
     minutes = round((heading - degrees) * 60)
     return degrees, minutes
 
-# create an incomming data array of 6 bytes
+# Set up I2C
 I2C_SDA_PIN = 0
 I2C_SCL_PIN = 1
-i2c=I2C(0,sda=Pin(I2C_SDA_PIN), scl=Pin(I2C_SCL_PIN), freq=400000)
-data = array('B', [0] * 6)
+I2C_ID = 0
+i2c=I2C(id = I2C_ID, sda=Pin(I2C_SDA_PIN), scl=Pin(I2C_SCL_PIN), freq=400000)
 
+# create an incomming data array of 6 bytes
+data = array('B', [0] * 6)
 
 with open('calibration.txt', 'r') as f:
     calibation = f.read().split('|')
